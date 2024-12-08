@@ -10,8 +10,15 @@ document.addEventListener("DOMContentLoaded", function(){
         const button = buttons[i];
         button.addEventListener("click", function(){
             const value = button.innerText;
-            currentValue += value;
-            display.value = currentValue;   //set the innerText of the button to current value and then display on the display
+            //if AC is clicked clear the display or make it empty
+            if(value == "AC"){
+                currentValue = "";
+                display.value = currentValue;
+            }else {
+                currentValue += value;
+                display.value = currentValue;   //set the innerText of the button to current value and then display it.  
+            }
+            
         });
         
     }
