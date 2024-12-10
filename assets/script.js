@@ -4,14 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.getElementsByClassName("btn");
 
   let currentValue = "";
+  
 
-  // Function to delete the last character from input
-  function deleteLast() {
-    if (currentValue.length > 0) {
-      currentValue = currentValue.slice(0, -1); // Remove the last character
-      display.value = currentValue || "0"; // Update the display, default to "0" if empty
-    }
+// Function to calculate factorial
+function factorial(n) {
+  if (!Number.isInteger(n) || n < 0) {
+    throw new Error(
+      "Factorial Error: Only non-negative integers are allowed"
+    );
   }
+  return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
 
   function calculateResult() {
     const convertedValue = currentValue
@@ -28,7 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace("tan", "Math.tan")
       .replace("ln", "Math.log")
       .replace("log", "Math.log10")
-      .replace("!", );
+      .replace(/(\d+)!/g, (match, number) => factorial(Number(number)));
+      
+      
+
+      
     const result = eval(convertedValue);
     currentValue = result.toString();
     display.value = currentValue;
