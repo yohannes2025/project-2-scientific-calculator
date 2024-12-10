@@ -9,7 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const convertedValue = currentValue
       .replace("x", "*")
       .replace("÷", "/")
-      .replace("%", "*0.01");
+      .replace("%", "*0.01")
+      .replace("π", "Math.PI")
+      .replace("e", "Math.PI")
+      .replace("^", "**")
+      .replace("sqrt", "Math.sqrt")
+      .replace("Rand", "Math.random()")
+      .replace("sin", "Math.sin")
+      .replace("cos", "Math.cos")
+      .replace("tan", "Math.tan")
+      .replace("ln", "Math.log")
+      .replace("log", "Math.log10");
     const result = eval(convertedValue);
     currentValue = result.toString();
     display.value = currentValue;
