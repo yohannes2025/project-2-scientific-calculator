@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentValue = "";
 
-  function calculate() {
+  // Function to delete the last character from input
+  function deleteLast() {
+    if (currentValue.length > 0) {
+      currentValue = currentValue.slice(0, -1); // Remove the last character
+      display.value = currentValue || "0"; // Update the display, default to "0" if empty
+    }
+  }
+
+  function calculateResult() {
     const convertedValue = currentValue
       .replace("x", "*")
       .replace("÷", "/")
@@ -19,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace("cos", "Math.cos")
       .replace("tan", "Math.tan")
       .replace("ln", "Math.log")
-      .replace("log", "Math.log10");
+      .replace("log", "Math.log10")
+      .replace("!", );
     const result = eval(convertedValue);
     currentValue = result.toString();
     display.value = currentValue;
@@ -35,8 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         currentValue = "";
         display.value = currentValue;
       } else if (value == "=") {
-        calculate();
-      } else {
+        calculateResult();
+      } else if (value === "⌫") {
+        deleteLast();
+      }else {
         currentValue += value;
         display.value = currentValue; //set the innerText of the button to current value and then display it.
       }
