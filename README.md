@@ -88,4 +88,4 @@ The application includes a visually appealing interface, optimized for both desk
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use, modify, and distribute this code as per the license.
+This project is licensed under the YMT License. Feel free to use, modify, and distribute this code as per the license.
