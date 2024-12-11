@@ -74,7 +74,14 @@ function deleteLast() {
       }
     });
   }
-  
+  // Event listener for angle mode toggle
+  angleModeElements.forEach((element) => {
+    element.addEventListener("change", function (event) {
+      angleMode = event.target.value;
+      console.log("Angle Mode: ", angleMode);
+    });
+  });
+
 });
 
 
