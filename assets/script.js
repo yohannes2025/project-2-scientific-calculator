@@ -16,6 +16,14 @@ function factorial(n) {
   return n <= 1 ? 1 : n * factorial(n - 1);
 }
 
+// Function to delete the last character from input
+function deleteLast() {
+  if (currentValue.length > 0) {
+    currentValue = currentValue.slice(0, -1); // Remove the last character
+    display.value = currentValue || "0"; // Update the display, default to "0" if empty
+  }
+}
+
 
   function calculateResult() {
     const convertedValue = currentValue
