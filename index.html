@@ -21,6 +21,36 @@
                     <div class="card-body">
                         <input id="calc-display" class="form-control form-control-lg text-end" type="text" aria-label=".form-control-lg example">
                         <div class="row gx-1">
+                            <!-- Angle mode switch -->
+                            <div class="col-6">
+                                <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="angleMode"
+                                    id="degree"
+                                    value="degree"
+                                    checked
+                                />
+                                <label class="form-check-label" for="degree">
+                                    Degrees
+                                </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="angleMode"
+                                    id="radian"
+                                    value="radian"
+                                  />
+                                  <label class="form-check-label" for="radian">
+                                    Radians
+                                  </label>
+                                </div>
+                              </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">sin</button>
                             </div>
