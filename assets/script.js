@@ -2,8 +2,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const display = document.getElementById("calc-display");
   const buttons = document.getElementsByClassName("btn");
+  //Add event listener for angleMode
+  const angleModeElements = document.getElementsByName("angleMode");
 
-  let currentValue = "";
+  let currentValue = ""; // Current value being entered  
+  let angleMode = "degree"; // Default angle mode
   
 
 // Function to calculate factorial
@@ -23,6 +26,8 @@ function deleteLast() {
     display.value = currentValue || "0"; // Update the display, default to "0" if empty
   }
 }
+
+
 
 
   function calculateResult() {
@@ -69,4 +74,7 @@ function deleteLast() {
       }
     });
   }
+  
 });
+
+
