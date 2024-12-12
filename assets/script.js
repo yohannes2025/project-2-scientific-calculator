@@ -59,6 +59,7 @@ function memoryClear() {
 
   function calculateResult() {
     const convertedValue = currentValue
+      
       .replace("x", "*")
       .replace("÷", "/")
       .replace("%", "*0.01")
@@ -66,14 +67,25 @@ function memoryClear() {
       .replace("e", "Math.E")
       .replace("^", "**")
       .replace("sqrt", "Math.sqrt")
-      .replace("Rand", "Math.random()")
-      .replace("sin", "Math.sin")
-      .replace("cos", "Math.cos")
-      .replace("tan", "Math.tan")
+      .replace("Rand", "Math.random()")      
       .replace("log", "Math.log10")
-      .replace(/(\d+)!/g, (match, number) => factorial(Number(number)));
+      .replace("ln", "Math.log")
+      .replace(/(\d+)!/g, (match, number) => factorial(Number(number)))
 
-      
+      .replace(
+        /sin\(([^)]+)\)/g,
+        (match, p1) => `Math.sin(${convertAngle(evaluateExpression(p1))})`
+      )    
+      .replace(
+        /cos\(([^)]+)\)/g,
+        (match, p1) => `Math.cos(${convertAngle(evaluateExpression(p1))})`
+      )
+      .replace(
+        /tan\(([^)]+)\)/g,
+        (match, p1) => `Math.tan(${convertAngle(evaluateExpression(p1))})`
+      )
+
+
       // Helper function to evaluate a mathematical expression
       function evaluateExpression(expression) {
         return new Function("return " + expression)(); // Safely evaluate the expression
