@@ -27,6 +27,11 @@ function deleteLast() {
   }
 }
 
+// Function to convert angles based on the selected mode
+function convertAngle(value) {
+  if (angleMode === "degree") return (value * Math.PI) / 180; // Convert degrees to radians
+  return value; // Radians (no conversion needed)
+}
 
 
 
@@ -79,6 +84,7 @@ function deleteLast() {
     element.addEventListener("change", function (event) {
       angleMode = event.target.value;
       console.log("Angle Mode: ", angleMode);
+      
     });
   });
 
