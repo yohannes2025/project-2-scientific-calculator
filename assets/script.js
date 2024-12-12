@@ -63,39 +63,32 @@ function memoryClear() {
       .replace("÷", "/")
       .replace("%", "*0.01")
       .replace("π", "Math.PI")
-      .replace("e", "Math.PI")
+      .replace("e", "Math.E")
       .replace("^", "**")
       .replace("sqrt", "Math.sqrt")
       .replace("Rand", "Math.random()")
       .replace("sin", "Math.sin")
       .replace("cos", "Math.cos")
       .replace("tan", "Math.tan")
-      .replace("ln", "Math.log")
       .replace("log", "Math.log10")
       .replace(/(\d+)!/g, (match, number) => factorial(Number(number)));
-      
-      // Handle memory operations
-      convertedValue = convertedValue
-        .replace(/M\+/g, () => {
-          memoryAdd();
-          return memoryValue.toString();
-        })
-        .replace(/M\-/g, () => {
-          memorySubtract();
-          return memoryValue.toString();
-        })
-        .replace(/MR/g, () => {
-          return memoryValue.toString();
-        })
-        .replace(/MC/g, () => {
-          memoryClear();
-          return "0";
-        });
 
       
-    const result = eval(convertedValue);
-    currentValue = result.toString();
-    display.value = currentValue;
+      // Helper function to evaluate a mathematical expression
+      function evaluateExpression(expression) {
+        return new Function("return " + expression)(); // Safely evaluate the expression
+  }
+
+      console.log("Converted Expression: ", convertedValue);
+      
+      try {
+        const result = eval(convertedValue);
+        currentValue = result.toString();
+        display.value = currentValue;
+      } catch (error) {
+        console.error("Error evaluating expression:", error);
+        display.value = "Error";
+      }
   }
 
   //Add click eventL tistener for each button
