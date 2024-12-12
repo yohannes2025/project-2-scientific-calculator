@@ -72,6 +72,7 @@ function memoryClear() {
       .replace("ln", "Math.log")
       .replace(/(\d+)!/g, (match, number) => factorial(Number(number)))
 
+      //Regular expression taken from google
       .replace(
         /sin\(([^)]+)\)/g,
         (match, p1) => `Math.sin(${convertAngle(evaluateExpression(p1))})`
@@ -84,7 +85,6 @@ function memoryClear() {
         /tan\(([^)]+)\)/g,
         (match, p1) => `Math.tan(${convertAngle(evaluateExpression(p1))})`
       )
-
 
       // Helper function to evaluate a mathematical expression
       function evaluateExpression(expression) {
@@ -140,7 +140,25 @@ function memoryClear() {
       angleMode = event.target.value;
       console.log("Angle Mode: ", angleMode);
       
-    });
+    });    
+
+  });
+
+   // Add keyboard input functionality
+   document.addEventListener("keydown", function (event) {
+    const key = event.key;
+
+    if (!isNaN(key) || "+-*/().^%".includes(key)) {
+      currentValue += key;
+      display.value = currentValue;
+    } else if (key === "Enter") {
+      calculateResult();
+    } else if (key === "Backspace") {
+      deleteLast();
+    } else if (key === "Escape") {
+      currentValue = "";
+      display.value = currentValue;
+    }
   });
 
 });
