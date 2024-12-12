@@ -73,7 +73,19 @@ function convertAngle(value) {
         calculateResult();
       } else if (value === "⌫") {
         deleteLast();
-      }else {
+      } else if (value === "M+") {
+        memoryAdd();
+        display.value = "Memory Added";
+      } else if (value === "M-") {
+        memorySubtract();
+        display.value = "Memory Subtracted";
+      } else if (value === "MR") {
+        memoryRecall();
+      } else if (value === "MC") {
+        memoryClear();
+        display.value = "Memory Cleared";
+      } else {
+
         currentValue += value;
         display.value = currentValue; //set the innerText of the button to current value and then display it.
       }
