@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentValue = ""; // Current value being entered  
   let angleMode = "degree"; // Default angle mode
+  let memoryValue = 0; // Variable to store memory value
+
   
 
 // Function to calculate factorial
@@ -33,6 +35,26 @@ function convertAngle(value) {
   return value; // Radians (no conversion needed)
 }
 
+// Memory functions
+function memoryAdd() {
+  const value = parseFloat(currentValue || "0");
+  memoryValue += value;
+}
+
+function memorySubtract() {
+  const value = parseFloat(currentValue || "0");
+  memoryValue -= value;
+}
+
+function memoryRecall() {
+  currentValue = memoryValue.toString();
+  display.value = currentValue;
+}
+
+function memoryClear() {
+  memoryValue = 0;
+}
+
 
 
   function calculateResult() {
@@ -52,7 +74,23 @@ function convertAngle(value) {
       .replace("log", "Math.log10")
       .replace(/(\d+)!/g, (match, number) => factorial(Number(number)));
       
-      
+      // Handle memory operations
+      convertedValue = convertedValue
+        .replace(/M\+/g, () => {
+          memoryAdd();
+          return memoryValue.toString();
+        })
+        .replace(/M\-/g, () => {
+          memorySubtract();
+          return memoryValue.toString();
+        })
+        .replace(/MR/g, () => {
+          return memoryValue.toString();
+        })
+        .replace(/MC/g, () => {
+          memoryClear();
+          return "0";
+        });
 
       
     const result = eval(convertedValue);
@@ -60,7 +98,7 @@ function convertAngle(value) {
     display.value = currentValue;
   }
 
-  //Add click event listener for each button
+  //Add click eventL tistener for each button
   for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
     button.addEventListener("click", function () {
