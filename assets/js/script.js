@@ -56,7 +56,6 @@ function memoryClear() {
 }
 
 
-
   function calculateResult() {
     const convertedValue = currentValue
       
@@ -89,10 +88,9 @@ function memoryClear() {
       // Helper function to evaluate a mathematical expression
       function evaluateExpression(expression) {
         return new Function("return " + expression)(); // Safely evaluate the expression
-  }
+      }
 
-      console.log("Converted Expression: ", convertedValue);
-      
+     
       try {
         const result = eval(convertedValue);
         currentValue = result.toString();
@@ -102,6 +100,8 @@ function memoryClear() {
         display.value = "Error";
       }
   }
+
+ 
 
   //Add click eventL tistener for each button
   for (let i = 0; i < buttons.length; i++) {
@@ -137,8 +137,7 @@ function memoryClear() {
   // Event listener for angle mode toggle
   angleModeElements.forEach((element) => {
     element.addEventListener("change", function (event) {
-      angleMode = event.target.value;
-      console.log("Angle Mode: ", angleMode);
+      angleMode = event.target.value;     
       
     });    
 
