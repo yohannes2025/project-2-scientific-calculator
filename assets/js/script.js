@@ -154,7 +154,7 @@ function evaluateExpression(expression) {
       deleteLast();
     } else if (key === "Escape") {
       currentValue = "";
-      display.value = currentValue;
+      display.value = "0";
     }
   });
 
