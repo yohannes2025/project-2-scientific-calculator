@@ -55,6 +55,11 @@ function memoryClear() {
   memoryValue = 0;
 }
 
+// Helper function to evaluate a mathematical expression
+function evaluateExpression(expression) {
+  return new Function("return " + expression)(); // Safely evaluate the expression
+}
+
 
   function calculateResult() {
     const convertedValue = currentValue
@@ -85,12 +90,7 @@ function memoryClear() {
         (match, p1) => `Math.tan(${convertAngle(evaluateExpression(p1))})`
       )
 
-      // Helper function to evaluate a mathematical expression
-      function evaluateExpression(expression) {
-        return new Function("return " + expression)(); // Safely evaluate the expression
-      }
-
-     
+           
       try {
         const result = eval(convertedValue);
         currentValue = result.toString();
@@ -103,7 +103,7 @@ function memoryClear() {
 
  
 
-  //Add click eventL tistener for each button
+  //Add click event listener for each button
   for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
     button.addEventListener("click", function () {
