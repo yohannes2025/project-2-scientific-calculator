@@ -135,12 +135,10 @@ function evaluateExpression(expression) {
     });
   }
   // Event listener for angle mode toggle
-  angleModeElements.forEach((element) => {
+  Array.from(angleModeElements).forEach((element) => {
     element.addEventListener("change", function (event) {
-      angleMode = event.target.value;     
-      
-    });    
-
+      angleMode = event.target.value;
+    });
   });
 
    // Add keyboard input functionality
