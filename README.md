@@ -1,6 +1,7 @@
 # Scientific Calculator Application
 
 This Scientific Calculator application is a fully functional calculator designed for advanced mathematical operations. Built with HTML, CSS, and JavaScript, it includes features for trigonometric calculations, logarithms, factorials, memory functions, and more, all wrapped in a responsive Bootstrap-powered interface.
+![scientific calculator](assets/images/screenshot/screenshot.png)
 
 ## Features
 
