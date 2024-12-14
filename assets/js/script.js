@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let angleMode = "degree"; // Default angle mode
   let memoryValue = 0; // Variable to store memory value
 
-  
+  // Function to reset the workspace to the initial state
+  function resetWorkspace() {
+    currentValue = ""; // Reset the current value
+    display.value = "0"; // Reset the display to "0"
+    angleMode = "degree"; // Reset angle mode to "degree"
+  }
 
 // Function to calculate factorial
 function factorial(n) {
@@ -108,10 +113,9 @@ function evaluateExpression(expression) {
     const button = buttons[i];
     button.addEventListener("click", function () {
       const value = button.innerText;
-      //if AC key is clicked clear the display or make it empty
+      //if AC key is clicked reset the workspace
       if (value == "AC") {
-        currentValue = "";
-        display.value = currentValue;
+        resetWorkspace(); 
       } else if (value == "=") {
         calculateResult();
       } else if (value === "⌫") {
@@ -152,9 +156,8 @@ function evaluateExpression(expression) {
       calculateResult();
     } else if (key === "Backspace") {
       deleteLast();
-    } else if (key === "Escape") {
-      currentValue = "";
-      display.value = "0";
+    } else if (key === "Escape") {      
+      resetWorkspace(); // Reset workspace on Escape key
     }
   });
 
