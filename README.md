@@ -1,6 +1,6 @@
 # Scientific Calculator Application
 
-![scientific calculator](assets/images/screenshot/screenshot.png)
+![scientific calculator](assets/images/screenshot/screenshot1.png)
 
 ## Contents
 
@@ -61,6 +61,8 @@ The primary goal of the Scientific Calculator application is to provide users wi
 
 
 ## Design
+
+![screenshot](assets/images/screenshot/screenshot2.png)
 
 ### Colour Scheme
 The colour scheme for the Scientific Calculator application is chosen to be visually appealing and to provide high contrast for readability with professional colour palette. The primary colours used are:
