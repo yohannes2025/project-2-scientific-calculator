@@ -158,6 +158,10 @@ The application is live on GitHub Pages. [View live site here](https://yohannes2
 
 ### W3C Validator
 - The HTML and CSS files were validated using the W3C Markup Validator and CSS Validator to ensure there are no syntax errors.
+1. HTML validation
+   ![w3c.org html validator](assets/images/validation/html_validation.png)
+3. CSS validation
+   ![w3c.org css validator](assets/images/validation/css_validation.png)
 
 ### JSHint
 - Checked JavaScript code for errors and best practices.
