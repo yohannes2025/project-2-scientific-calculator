@@ -1,5 +1,7 @@
 # Scientific Calculator Application
 
+![scientific calculator](assets/images/screenshot/screenshot.png)
+
 ## Contents
 
 - [Scientific Calculator Application](#scientific-calculator-application)
