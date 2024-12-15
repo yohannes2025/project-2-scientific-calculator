@@ -93,7 +93,7 @@ function evaluateExpression(expression) {
       .replace(
         /tan\(([^)]+)\)/g,
         (match, p1) => `Math.tan(${convertAngle(evaluateExpression(p1))})`
-      )
+      );
 
            
       try {
