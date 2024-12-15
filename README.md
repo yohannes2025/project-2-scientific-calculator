@@ -49,42 +49,68 @@ This Scientific Calculator application is a fully functional calculator designed
 
 ### Initial Discussion
 This section outlines the purpose of the scientific calculator, its target audience, and the primary goals of its functionality. It includes discussions on user needs and the problem-solving approach.
+The primary goal of the Scientific Calculator application is to provide users with a powerful and user-friendly tool for performing advanced mathematical operations. The application is designed to be intuitive and accessible, ensuring that both casual users and professionals can benefit from its features.
 
 ### User Stories
-- **As a student**, I want a calculator capable of performing trigonometric and logarithmic functions to help with my assignments.
-- **As an engineer**, I need a tool to handle precise calculations for my projects.
-- **As a general user**, I require a simple interface to perform basic and advanced calculations easily.
+1. **As a student**, I want a scientific calculator capable of performing trigonometric and logarithmic functions to help with my assignments.
+2. **As a teacher**, I want to demonstrate complex calculations to my students, so that they can understand mathematical concepts better.
+3. **As a researcher**, I want to perform accurate scientific calculations, so that I can validate my research findings.
+4. **As a developer**, I want to use a calculator with keyboard support, so that I can quickly perform operations without using a mouse.
+5. **As an engineer**, I need a tool to handle precise calculations for my projects.
+6. **As a general user**, I require a simple interface to perform basic and advanced calculations easily.
+
 
 ## Design
 
 ### Colour Scheme
-The interface features a professional colour palette:
-- **Primary Colours**: Navy blue for borders and buttons.
-- **Secondary Colours**: Light grey for the background.
-- **Accent Colours**: Green for "Calculate" actions and red for "Reset."
+The colour scheme for the Scientific Calculator application is chosen to be visually appealing and to provide high contrast for readability with professional colour palette. The primary colours used are:
+- **Background**: Light grey
+- **Primary Colours**: Navy blue for mathematical operations of addition, subtraction, multiplication and division buttons.
+- **Secondary Colours**: Light grey for numbers from 0 to 9 inclusing brackets and point.
+- **Accent Colours**: light blue for functionsl operations like trignometric, logarithmic, and memory buttons and red for "Reset" and yellow for "backspace".
 
 ### Typography
+The application uses a clean and modern font for all text elements to ensure readability. The primary font used is `Poppins`, with `sans-serif` as fallbacks.
 Fonts are chosen for clarity and readability:
-- **Primary Font**: Arial for numerical input and results.
-- **Secondary Font**: Roboto for labels and informational text.
 
 ### Imagery
-Minimal imagery ensures a clean design. Icons are used for buttons to visually represent their functions.
+Imagery is kept to a minimum to maintain a clean and uncluttered interface. Minimal imagery ensures a clean design. buttons are used to visually represent their functions.
 
 ### Wireframes
+Wireframes were created to outline the basic layout and functionality of the application. These include the arrangement of buttons, display, and additional features like memory functions and angle mode.
 Wireframes depict responsive layouts for desktop, tablet, and mobile, ensuring an optimal user experience across devices.
+1. Desktop layout
+   ![Wireframe for Desktop](assets/images/wireframe/computer.png)
+3. Tablet layout
+   ![Wireframe for Tablet](assets/images/wireframe/tablet.png)
+5. Mobile layout
+   ![Wireframe for Mobile](assets/images/wireframe/mobile.png)
+   
 
 ### Features
-- Basic Arithmetic Operations: Addition, subtraction, multiplication, and division.
-- Advanced Calculations: Trigonometric, logarithmic, and exponential functions.
-- Memory Functions: Store, recall, and clear memory values.
-- Error Handling: Provides clear feedback for invalid input.
+- **Arithmetic Operations**: Addition, subtraction, multiplication, division, and percentage calculations.
+- **Trigonometric Functions**: sin, cos, tan (calculates in degrees or radians).
+- **Logarithmic Functions**: ln (natural logarithm) and log (base-10 logarithm).
+- **Exponential and Power Operations**: Includes exponentiation (x^y) and square roots.
+- **Constants**: Includes π and Euler's constant e.
+- **Factorial Calculation**: Computes factorial for non-negative integers.
+- **Random Number Generator**: Generates a random number between 0 and 1.
+- **Memory Functions**:
+  - M+: Add to memory.
+  - M-: Subtract from memory.
+  - MR: Recall memory value.
+  - MC: Clear memory.
+- **Angle Mode Selection**: Toggle between degrees and radians.
+- **Input Flexibility**:
+  - Button clicks.
+  - Keyboard input for numbers, operators, and functions.
+- **Error Handling**: Displays appropriate error messages for invalid inputs or operations.
 
 ### Accessibility
-Designed to be inclusive:
-- Fully keyboard-navigable interface.
-- Screen reader support for visually impaired users.
-- High contrast mode for better visibility.
+The application is designed to be accessible to all users, including those with disabilities. Features include:
+- High contrast colour scheme for readability.
+- Keyboard support for all operations.
+- Clear error messages for invalid inputs.
 
 ## Technologies Used
 
@@ -94,60 +120,78 @@ Designed to be inclusive:
 - JavaScript
 
 ### Frameworks, Libraries & Programs Used
-- **Bootstrap**: For responsive design.
-- **Font Awesome**: For intuitive button icons.
-- **Jest**: For JavaScript testing.
+- [Bootstrap](https://getbootstrap.com/): For responsive design and styling.
+- [math.js](https://mathjs.org/): For evaluating mathematical expressions safely.
+- **Google DevTools - console**: For JavaScript testing.
+- **JSHint**: For JavaScript validating.
 
 ## Deployment & Local Development
 
 ### Deployment
-The application is live on GitHub Pages. [View live site here](#).
+The application can be deployed on any web server. Simply upload the project files to the server, and it will be accessible via a web browser.
+The application is live on GitHub Pages. [View live site here](https://github.com/yohannes2025/project-2.2).
 
 ### Local Development
 
 #### How to Fork
-1. Navigate to the GitHub repository.
-2. Click the "Fork" button at the top-right corner.
+1. Log in to GitHub and navigate to the repository.
+2. Click the "Fork" button in the top right corner.
+3. The repository will be forked to your account.
 
 #### How to Clone
-1. Copy the repository URL.
-2. Open your terminal and run:
-   ```bash
-   git clone <repository-url>
-   ```
-3. Navigate to the project folder and open it in your preferred IDE.
+1. Navigate to your forked repository on GitHub.
+2. Click the "Code" button and copy the repository URL.
+3. Open your terminal and run:
+    ```bash
+    git clone <repository-url>
+    ```
+4. Navigate to the project directory:
+    ```bash
+    cd scientific-calculator
+    ```
+5. Open the `index.html` file in your browser to use the calculator.
+
 
 ## Testing
 
 ### W3C Validator
-- Validated HTML and CSS files to ensure standards compliance.
+- The HTML and CSS files were validated using the W3C Markup Validator and CSS Validator to ensure there are no syntax errors.
 
 ### JSHint
 - Checked JavaScript code for errors and best practices.
+- Here is the test result
+  ![JSHint test result](assets/images/validation/jshint.png)
 
 ### Solved Bugs
-- Resolved an issue where trigonometric functions returned incorrect results for angles in degrees.
-- Fixed display issues for large numbers on mobile devices.
+- Fixed issue with negative numbers in factorial calculations.
+- Resolved keyboard input conflicts.
+- Corrected error message display for invalid operations.
 
 ### Known Bugs
-- Occasional lag when handling extremely large calculations.
+- We need to reset the workspace by clicking the AC button or by pressing the Escape key on the keyboard to start new calculation.
+- There is a warning by jshint.com for using eval to calculate the expressions.
 
 ### Testing User Stories
-- Verified all functionalities meet the requirements outlined in user stories.
+1. **Student**: Successfully performed various mathematical operations.
+2. **Teacher**: Demonstrated complex calculations without issues.
+3. **Researcher**: Validated research findings with accurate calculations.
+4. **Developer**: Used keyboard support for quick operations.
 
 ### Lighthouse
-- Ran Lighthouse tests to evaluate performance, accessibility, and best practices.
+- Lighthouse tests were conducted to ensure the application meets performance, accessibility, and best practices standards. Here is the result
+  ![Lighthouse test result](assets/images/validation/lighthouse.png)
 
 ### Thank You Page
-- Tested the user-friendly thank-you message after completing operations.
+- I would like to thank for the whole code Institute Team members for tutoring, mentoring and quick responses whenever I require technical help.
 
 ### Full Testing
-- Comprehensive testing across browsers and devices to ensure functionality and responsiveness.
+- A comprehensive testing plan was executed, covering all features and functionalities of the application. This included unit tests for individual functions and integration tests for overall user experience.
 
 ## Credits
 
 ### Code Used
-- **Math.js**: Utilized for complex mathematical operations.
+- Utilized [math.js](https://mathjs.org/) for mathematical expression evaluation.
+
 
 ### Content
 - Original content created for tooltips and instructions.
@@ -156,4 +200,4 @@ The application is live on GitHub Pages. [View live site here](#).
 - Icons sourced from Font Awesome.
 
 ### Acknowledgments
-Special thanks to online tutorials, GitHub contributors, and open-source communities for guidance and resources.
+- Special thanks to online tutorials, and mentors of Code Institute communities for guidance and folowups.
