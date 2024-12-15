@@ -80,11 +80,11 @@ Imagery is kept to a minimum to maintain a clean and uncluttered interface. Mini
 Wireframes were created to outline the basic layout and functionality of the application. These include the arrangement of buttons, display, and additional features like memory functions and angle mode.
 Wireframes depict responsive layouts for desktop, tablet, and mobile, ensuring an optimal user experience across devices.
 1. Desktop layout
-   ![Wireframe for Desktop](assets/images/wireframe/computer.png)
+   ![Wireframe for Desktop](assets/images/wireframes/computer.png)
 3. Tablet layout
-   ![Wireframe for Tablet](assets/images/wireframe/tablet.png)
+   ![Wireframe for Tablet](assets/images/wireframes/tablet.png)
 5. Mobile layout
-   ![Wireframe for Mobile](assets/images/wireframe/mobile.png)
+   ![Wireframe for Mobile](assets/images/wireframes/mobile.png)
    
 
 ### Features
