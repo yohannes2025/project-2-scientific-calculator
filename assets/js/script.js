@@ -1,3 +1,18 @@
+// Helper function to evaluate a mathematical expression using math.js 
+// Ensure math.js is available globally
+function evaluateExpression(expression) { 
+  try { 
+    if (typeof math !== "undefined") {
+      return math.evaluate(expression);
+    } else {
+      throw new Error("Math.js is not defined");
+    }
+  } catch (error) { 
+    console.error("Error evaluating expression:", error); 
+    throw new Error("Evaluation Error: Invalid expression");
+  }
+}
+
 //Add event listener for the display and the buttons
 document.addEventListener("DOMContentLoaded", function () {
   const display = document.getElementById("calc-display");
@@ -60,50 +75,52 @@ function memoryClear() {
   memoryValue = 0;
 }
 
-// Helper function to evaluate a mathematical expression
-function evaluateExpression(expression) {
-  return new Function("return " + expression)(); // Safely evaluate the expression
-}
-
 
   function calculateResult() {
-    const convertedValue = currentValue
+    try{
+       const convertedValue = currentValue
       
       .replace("x", "*")
       .replace("÷", "/")
       .replace("%", "*0.01")
-      .replace("π", "Math.PI")
-      .replace("e", "Math.E")
-      .replace("^", "**")
-      .replace("sqrt", "Math.sqrt")
-      .replace("Rand", "Math.random()")      
-      .replace("log", "Math.log10")
-      .replace("ln", "Math.log")
+      .replace("π", "pi")
+      .replace("e", "e")
+      .replace("^", "**")      
+      .replace(/Rand/g, "random()")        
+      
       .replace(/(\d+)!/g, (match, number) => factorial(Number(number)))
 
-      //Regular expression taken from google
-      .replace(
-        /sin\(([^)]+)\)/g,
-        (match, p1) => `Math.sin(${convertAngle(evaluateExpression(p1))})`
-      )    
-      .replace(
-        /cos\(([^)]+)\)/g,
-        (match, p1) => `Math.cos(${convertAngle(evaluateExpression(p1))})`
-      )
-      .replace(
-        /tan\(([^)]+)\)/g,
-        (match, p1) => `Math.tan(${convertAngle(evaluateExpression(p1))})`
-      );
+      .replace(/sqrt\(([^)]+)\)/g, (match, p1) => { const arg = evaluateExpression(p1); 
+        if (arg < 0) throw new Error("Square Root Error: Negative number"); 
+        return `sqrt(${arg})`; })
+      .replace(/log\(([^)]+)\)/g, (match, p1) => {
+         const arg = evaluateExpression(p1); 
+         if (arg <= 0) throw new Error("Logarithm Error: Non-positive number"); 
+         return `Math.log10(${arg})`; 
+        })
+      
+        .replace(/ln\(([^)]+)\)/g, (match, p1) => { 
+          const arg = evaluateExpression(p1); 
+          if (arg <= 0) throw new Error("Natural Logarithm Error: Non-positive number"); 
+          return `Math.log(${arg})`;
+        })
 
-           
-      try {
-        const result = eval(convertedValue);
+      //Regular expression taken from google
+      .replace(/sin\(([^)]+)\)/g, (match, p1) => `sin(${convertAngle(evaluateExpression(p1))})`) 
+      .replace(/cos\(([^)]+)\)/g, (match, p1) => `cos(${convertAngle(evaluateExpression(p1))})`) 
+      .replace(/tan\(([^)]+)\)/g, (match, p1) => `tan(${convertAngle(evaluateExpression(p1))})`);
+
+                 
+        const result = evaluateExpression(convertedValue);
         currentValue = result.toString();
         display.value = currentValue;
-      } catch (error) {
-        console.error("Error evaluating expression:", error);
-        display.value = "Error";
-      }
+    } catch(error){
+      console.error("Error evaluating expression:", error); 
+      display.value = "ERROR: " + error.message; 
+      currentValue = "";
+    }
+   
+      
   }
 
  
