@@ -80,29 +80,27 @@ function memoryClear() {
     try{
        const convertedValue = currentValue
       
-      .replace("x", "*")
-      .replace("÷", "/")
-      .replace("%", "*0.01")
-      .replace("π", "pi")
-      .replace("e", "e")
-      .replace("^", "**")      
-      .replace(/Rand/g, "random()")        
-      
+      .replace(/×/g, "*") 
+      .replace(/÷/g, "/") 
+      .replace(/%/g, "*0.01")   
+      .replace(/π/g, "pi")         
+      .replace(/Rand/g, "random()")       
       .replace(/(\d+)!/g, (match, number) => factorial(Number(number)))
 
       .replace(/sqrt\(([^)]+)\)/g, (match, p1) => { const arg = evaluateExpression(p1); 
         if (arg < 0) throw new Error("Square Root Error: Negative number"); 
-        return `sqrt(${arg})`; })
-      .replace(/log\(([^)]+)\)/g, (match, p1) => {
-         const arg = evaluateExpression(p1); 
-         if (arg <= 0) throw new Error("Logarithm Error: Non-positive number"); 
-         return `Math.log10(${arg})`; 
+        return `sqrt(${arg})`; 
         })
-      
+
+        .replace(/log\(([^)]+)\)/g, (match, p1) => { 
+          const arg = evaluateExpression(p1); 
+          if (arg <= 0) throw new Error("Logarithm Error: Non-positive number"); 
+          return `log10(${arg})`; 
+        }) 
         .replace(/ln\(([^)]+)\)/g, (match, p1) => { 
           const arg = evaluateExpression(p1); 
           if (arg <= 0) throw new Error("Natural Logarithm Error: Non-positive number"); 
-          return `Math.log(${arg})`;
+          return `log(${arg})`;
         })
 
       //Regular expression taken from google

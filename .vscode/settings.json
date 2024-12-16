@@ -13,7 +13,7 @@
     "**/CVS": true
   },
   "files.autoSave": "off",
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "Gitpod Dark",
   "terminal.integrated.gpuAcceleration": "canvas",
   "liveServer.settings.port": 5504
 }
