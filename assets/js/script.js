@@ -1,15 +1,15 @@
 // Helper function to evaluate a mathematical expression using math.js 
-// Ensure math.js is available globally
+// math.js is available globally
 function evaluateExpression(expression) { 
   try { 
     if (typeof math !== "undefined") {
       return math.evaluate(expression);
     } else {
-      throw new Error("Math.js is not defined");
+      throw new Error("Math.js is not defined");      
     }
   } catch (error) { 
     console.error("Error evaluating expression:", error); 
-    throw new Error("Evaluation Error: Invalid expression");
+    throw new Error("Evaluation Error: Invalid expression");    
   }
 }
 
@@ -118,43 +118,42 @@ function memoryClear() {
       console.error("Error evaluating expression:", error); 
       display.value = "ERROR: " + error.message; 
       currentValue = "";
-    }
-   
+    }   
       
   }
-
  
 
-  //Add click event listener for each button
-  for (let i = 0; i < buttons.length; i++) {
-    const button = buttons[i];
-    button.addEventListener("click", function () {
-      const value = button.innerText;
-      //if AC key is clicked reset the workspace
-      if (value == "AC") {
-        resetWorkspace(); 
-      } else if (value == "=") {
-        calculateResult();
-      } else if (value === "⌫") {
-        deleteLast();
-      } else if (value === "M+") {
-        memoryAdd();
-        display.value = "Memory Added";
-      } else if (value === "M-") {
-        memorySubtract();
-        display.value = "Memory Subtracted";
-      } else if (value === "MR") {
-        memoryRecall();
-      } else if (value === "MC") {
-        memoryClear();
-        display.value = "Memory Cleared";
-      } else {
+  // Add click event listener for each button 
+  for (let i = 0; i < buttons.length; i++) { 
+  const button = buttons[i]; 
+  button.addEventListener("click", handleButtonClick); 
+  } 
+  function handleButtonClick() { 
+    const value = this.innerText;
+    if (value == "AC") {
+      resetWorkspace(); 
+    } else if (value == "=") {
+      calculateResult();
+    } else if (value === "⌫") {
+      deleteLast();
+    } else if (value === "M+") {
+      memoryAdd();
+      display.value = "Memory Added";
+    } else if (value === "M-") {
+      memorySubtract();
+      display.value = "Memory Subtracted";
+    } else if (value === "MR") {
+      memoryRecall();
+    } else if (value === "MC") {
+      memoryClear();
+      display.value = "Memory Cleared";
+    } else {
 
-        currentValue += value;
-        display.value = currentValue; //set the innerText of the button to current value and then display it.
-      }
-    });
+      currentValue += value;
+      display.value = currentValue; //set the innerText of the button to current value and then display it.
+    }
   }
+  
   // Event listener for angle mode toggle
   Array.from(angleModeElements).forEach((element) => {
     element.addEventListener("change", function (event) {
