@@ -204,7 +204,7 @@ The application is live on GitHub Pages. [View live site here](https://yohannes2
 
 
 ### Content
-- Utilized [FreecodeCamp](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/) for the idea of how to build Scientifica Calculator from JavaScript.
+- Utilized [FreecodeCamp](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/) for the idea of how to build Scientific Calculator from JavaScript.
 
 
 ### Acknowledgments
