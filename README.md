@@ -196,14 +196,15 @@ The application is live on GitHub Pages. [View live site here](https://yohannes2
 ## Credits
 
 ### Code Used
-- Utilized [math.js](https://mathjs.org/) for mathematical expression evaluation.
+- Utilized [math.js](https://mathjs.org/) for mathematical expression evaluation replacing eval function which is not safe.
+- Utilized [Scientific calculator - live](https://github.com/sydney-jovian/scientific-calculator-live/tree/main) for the begining of initial setup.
+- Utilized [Regular expressions](https://stackoverflow.com/questions/1144783/how-do-i-replace-all-occurrences-of-a-string-in-javascript/17606289#17606289) for replacing all occurrences of a string in JavaScript.
+- Utilized [Wikipedia](https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols) for mathematical symbols representation.
 
 
 ### Content
-- Original content created for tooltips and instructions.
+- Utilized [FreecodeCamp](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/) for the idea of how to build Scientifica Calculator from JavaScript.
 
-### Media
-- Icons sourced from Font Awesome.
 
 ### Acknowledgments
 - Special thanks to online tutorials, and mentors of Code Institute communities for guidance and folowups.
