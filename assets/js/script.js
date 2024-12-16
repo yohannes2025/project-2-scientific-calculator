@@ -75,12 +75,12 @@ function memoryClear() {
   memoryValue = 0;
 }
 
-
+// Function to evaluate the expression and update the display
   function calculateResult() {
     try{
        const convertedValue = currentValue
       
-      .replace(/×/g, "*") 
+      .replace(/x/g, "*") 
       .replace(/÷/g, "/") 
       .replace(/%/g, "*0.01")   
       .replace(/π/g, "pi")         
@@ -107,7 +107,6 @@ function memoryClear() {
       .replace(/sin\(([^)]+)\)/g, (match, p1) => `sin(${convertAngle(evaluateExpression(p1))})`) 
       .replace(/cos\(([^)]+)\)/g, (match, p1) => `cos(${convertAngle(evaluateExpression(p1))})`) 
       .replace(/tan\(([^)]+)\)/g, (match, p1) => `tan(${convertAngle(evaluateExpression(p1))})`);
-
                  
         const result = evaluateExpression(convertedValue);
         currentValue = result.toString();
@@ -126,6 +125,8 @@ function memoryClear() {
   const button = buttons[i]; 
   button.addEventListener("click", handleButtonClick); 
   } 
+
+    // Function to handle button clear, backspace and memory keys
   function handleButtonClick() { 
     const value = this.innerText;
     if (value == "AC") {
