@@ -134,7 +134,7 @@ The application is designed to be accessible to all users, including those with 
 
 ### Deployment
 The application can be deployed on any web server. Simply upload the project files to the server, and it will be accessible via a web browser.
-The application is live on GitHub Pages. [View live site here](https://yohannes2025.github.io/project-2.2/).
+The application is live on GitHub Pages. [View live site here](https://yohannes2025.github.io/project-2-scientific-calculator/)).
 
 ### Local Development
 
