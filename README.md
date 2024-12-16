@@ -172,7 +172,7 @@ The application is live on GitHub Pages. [View live site here](https://yohannes2
   ![JSHint test result](assets/images/validation/jshint.png)
 
 ### Solved Bugs
-- Fixed issue with negative numbers in factorial calculations.
+- Fixed issue with negative numbers in factorial, square root, and logarithm calculations.
 - Resolved keyboard input conflicts.
 - Corrected error message display for invalid operations.
 
