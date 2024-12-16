@@ -124,8 +124,9 @@ The application is designed to be accessible to all users, including those with 
 ### Frameworks, Libraries & Programs Used
 - [Bootstrap](https://getbootstrap.com/): For responsive design and styling.
 - [math.js](https://mathjs.org/): For evaluating mathematical expressions safely.
-- **Google DevTools - console**: For JavaScript testing.
+- **Google DevTools - console**: For JavaScript testing during developement.
 - **JSHint**: For JavaScript validating.
+- [Balsamiq](https://balsamiq.com/): for Wireframe Design.
 
 ## Deployment & Local Development
 
@@ -174,8 +175,8 @@ The application is live on GitHub Pages. [View live site here](https://yohannes2
 - Corrected error message display for invalid operations.
 
 ### Known Bugs
-- We need to reset the workspace by clicking the AC button or by pressing the Escape key on the keyboard to start new calculation.
-- There is a warning by jshint.com for using eval to calculate the expressions.
+- We need to reset the workspace by clicking the AC button or by pressing the Escape key on the keyboard to re-start next calculation.
+- There remains one warning by jshint.com validator for Math undefined variable.
 
 ### Testing User Stories
 1. **Student**: Successfully performed various mathematical operations.
