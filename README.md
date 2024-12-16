@@ -125,8 +125,10 @@ The application is designed to be accessible to all users, including those with 
 - [Bootstrap](https://getbootstrap.com/): For responsive design and styling.
 - [math.js](https://mathjs.org/): For evaluating mathematical expressions safely.
 - **Google DevTools - console**: For JavaScript testing during developement.
-- **JSHint**: For JavaScript validating.
-- [Balsamiq](https://balsamiq.com/): for Wireframe Design.
+- [JSHint](https://jshint.com/): For JavaScript validating.
+- [Balsamiq](https://balsamiq.com/): For Wireframe Design.
+- [W3C HTML Validator](https://validator.w3.org/): For HTML validation.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): For CSS validation.
 
 ## Deployment & Local Development
 
