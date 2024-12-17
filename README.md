@@ -108,6 +108,27 @@ Wireframes depict responsive layouts for desktop, tablet, and mobile, ensuring a
   - Keyboard input for numbers, operators, and functions.
 - **Error Handling**: Displays appropriate error messages for invalid inputs or operations.
 
+## Examples
+**Example 1:** Calculate sine of 30 degrees.
+```
+Input: sin(30)
+Output: 0.5
+```
+
+**Example 2:** Perform a factorial operation.
+```
+Input: 5!
+Output: 120
+```
+
+**Example 3:** Compute log base 10 of 100.
+```
+Input: log(100)
+Output: 2
+```
+
+---
+
 ### Accessibility
 The application is designed to be accessible to all users, including those with disabilities. Features include:
 - High contrast colour scheme for readability.
