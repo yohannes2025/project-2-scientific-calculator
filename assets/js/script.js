@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to reset the workspace to the initial state
   function resetWorkspace() {
     currentValue = ""; // Reset the current value
-    display.value = "0"; // Reset the display to "0"
-    angleMode = "degree"; // Reset angle mode to "degree"
+    display.value = "0"; // Reset the display to "0"    
   }
 
 // Function to calculate factorial
